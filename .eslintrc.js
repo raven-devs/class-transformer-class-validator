@@ -59,7 +59,7 @@ module.exports = {
     'import/exports-last': 'warn',
     'import/newline-after-import': 'warn',
     'import/no-default-export': 'warn',
-    'import/no-unassigned-import': 'error',
+    'import/no-unassigned-import': 'off',
   },
   reportUnusedDisableDirectives: true,
 };
