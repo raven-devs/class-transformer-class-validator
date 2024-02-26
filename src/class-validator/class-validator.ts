@@ -15,7 +15,7 @@ address1.country = 'country1';
 const user = new UserDto();
 user.id = '857fe68e-8366-44e7-aa98-6d10391fac20';
 user.name = 'Name1';
-user.age = 25;
+user.age = 18;
 user.password = 'password';
 user.addresses = [address1];
 user.onboardingDate = new Date().toISOString();
@@ -30,6 +30,7 @@ user.languages = new Set([
   { language: 'language2', proficiency: 'proficiency2' },
   { language: 'language3', proficiency: 'proficiency3' },
 ]);
+user.notes = 'notes';
 
 async function main() {
   const errors = await Validator.validate(user);

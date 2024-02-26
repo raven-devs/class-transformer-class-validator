@@ -8,10 +8,11 @@ export interface User {
   age: number;
   password: string;
   addresses: Address[];
-  department: string;
+  department?: string;
   registrationDate: Date;
   onboardingDate: string;
   skills: Set<string>;
   experience: Map<string, Experience>;
   languages: Set<Language>;
+  notes?: string;
 }
