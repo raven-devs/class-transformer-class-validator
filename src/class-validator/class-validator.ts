@@ -4,11 +4,11 @@ import { Post } from './type/post';
 import { Validator } from './validator';
 
 const post = new Post();
-post.title = 'Hello'; // should not pass
-post.text = 'this is a great post about hell world'; // should not pass
-post.rating = 11; // should not pass
-post.email = 123; // should not pass
-post.site = 'googlecom'; // should not pass
+post.title = 'Hello';
+post.text = 'this is a great post about hell world';
+post.rating = 11;
+post.email = 'user@company.com';
+post.site = 'googlecom';
 
 async function main() {
   const errors = await Validator.validate(post);
