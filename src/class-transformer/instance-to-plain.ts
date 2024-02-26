@@ -1,25 +1,25 @@
 // npx ts-node src/class-transformer/instance-to-plain.ts
 
 import 'reflect-metadata';
+import { AddressDto } from '../module/user/dto/address-dto';
+import { UserDto } from '../module/user/dto/user-dto';
 import { Transformer } from './transformer';
-import { Address } from './type/address';
-import { User } from './type/user';
 
-const address1 = new Address();
+const address1 = new AddressDto();
 address1.street = 'Street1';
 address1.building = '45';
 address1.city = 'City1';
 address1.postCode = '123';
 address1.country = 'country1';
 
-const address2 = new Address();
+const address2 = new AddressDto();
 address2.street = 'Street2';
 address2.building = '67';
 address2.city = 'City2';
 address2.postCode = '456';
 address2.country = 'country1';
 
-const user = new User();
+const user = new UserDto();
 user.id = '857fe68e-8366-44e7-aa98-6d10391fac20';
 user.name = 'Name1';
 user.age = 25;
@@ -38,7 +38,7 @@ user.languages = new Set([
   { language: 'language3', proficiency: 'proficiency3' },
 ]);
 
-const userPlain = Transformer.toPlain<User>(user);
+const userPlain = Transformer.toPlain<UserDto>(user);
 console.log({ userPlain });
 
 export {};

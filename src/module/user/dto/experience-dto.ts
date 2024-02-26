@@ -1,6 +1,7 @@
 import { Expose } from 'class-transformer';
+import { Experience } from '../experience';
 
-export class SkillExperience {
+export class ExperienceDto implements Experience {
   @Expose()
   level: string;
 

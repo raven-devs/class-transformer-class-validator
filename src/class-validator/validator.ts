@@ -1,7 +1,7 @@
-import { ValidationError, validate as cvalidate } from 'class-validator';
+import { ValidationError, validate as classValidate } from 'class-validator';
 
 const validate = async (input: Record<string, any>) => {
-  return await cvalidate(input);
+  return await classValidate(input, { validationError: { target: false } });
 };
 
 const toString = (errors: ValidationError[]) => {

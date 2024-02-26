@@ -1,6 +1,7 @@
 import { Expose } from 'class-transformer';
+import { Address } from '../address';
 
-export class Address {
+export class AddressDto implements Address {
   @Expose()
   street: string;
 

@@ -1,11 +1,11 @@
 // npx ts-node src/class-transformer/plain-to-instance.ts
 
 import 'reflect-metadata';
-import userPlain from './json/user.json';
+import { UserDto } from '../module/user/dto/user-dto';
+import userPlain from '../module/user/json/user.json';
 import { Transformer } from './transformer';
-import { User } from './type/user';
 
-const user = Transformer.toInstance<User>(User, userPlain);
+const user = Transformer.toInstance<UserDto>(UserDto, userPlain);
 console.log({ user });
 
 export {};
