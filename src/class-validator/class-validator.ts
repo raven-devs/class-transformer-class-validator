@@ -1,5 +1,6 @@
 // npx ts-node src/class-validator/class-validator.ts
 
+import { isBoolean, isEmpty } from 'class-validator';
 import 'reflect-metadata';
 import { AddressDto } from '../module/user/dto/address-dto';
 import { UserDto } from '../module/user/dto/user-dto';
@@ -40,6 +41,14 @@ async function main() {
 
   const errorsStr = Validator.toString(errors);
   console.log(errorsStr);
+
+  // manual validation
+  const value = '';
+  const isEmptyValue = isEmpty(value);
+  console.log({ isEmptyValue });
+
+  const isBooleanValue = isBoolean(value);
+  console.log({ isBooleanValue });
 }
 
 main().catch((error) => console.error(error));
