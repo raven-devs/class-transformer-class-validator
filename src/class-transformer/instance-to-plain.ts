@@ -1,7 +1,7 @@
 // npx ts-node src/class-transformer/instance-to-plain.ts
 
-import { instanceToPlain } from 'class-transformer';
 import 'reflect-metadata';
+import { Transformer } from './transformer';
 import { Address } from './type/address';
 import { User } from './type/user';
 
@@ -38,7 +38,7 @@ user.languages = new Set([
   { language: 'language3', proficiency: 'proficiency3' },
 ]);
 
-const userPlain = instanceToPlain<User>(user);
+const userPlain = Transformer.toPlain<User>(user);
 console.log({ userPlain });
 
 export {};
